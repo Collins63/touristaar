@@ -10,8 +10,8 @@ import 'package:touristaar/CONSTANTS/height_spacer.dart';
 import 'package:touristaar/CONSTANTS/reusable_text.dart';
 import 'package:touristaar/constants/app_constants.dart';
 
-class InfoArExperience extends StatelessWidget {
-  const InfoArExperience({super.key});
+class MapsRoutes extends StatelessWidget {
+  const MapsRoutes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class InfoArExperience extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar:const PreferredSize(
         preferredSize: Size.fromHeight(30),
-        child: CustomAppBar(text: "Ar", child: SizedBox() ,)
+        child: CustomAppBar(text: "Maps And Routes", child: SizedBox() ,)
       ),
       body: Padding(
         padding:const EdgeInsets.symmetric(horizontal: 10),
@@ -44,7 +44,7 @@ class InfoArExperience extends StatelessWidget {
               const HeightSpacer(size: 10),
               ReusableText(text: "Get Insights", style: appStyle(14, Colors.black, FontWeight.normal)),
               const HeightSpacer(size: 10),
-              Text("AR Travel Experience",style: appStyle(22, Colors.black, FontWeight.w500)),
+              Text("Routes Suggestions",style: appStyle(22, Colors.black, FontWeight.w500)),
               const HeightSpacer(size: 10),
               Container(
                 height: height*0.3,
@@ -52,13 +52,22 @@ class InfoArExperience extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: const DecorationImage(
-                    image:AssetImage('lib/assets/arPhone.PNG'),
+                    image:AssetImage('lib/assets/maps.jpg'),
                     fit: BoxFit.fill
                   )
                 ),
               ),
               const HeightSpacer(size: 10),
-              ReusableText( text:"Brings you augmented reality experience for numerous" , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"Navigate with ease! Our app provides smart maps and" 
+              , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"real-time route suggestions, ensuring the fastest and" , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"most efficient way to your destination. Whether you're" , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"exploring new places or commuting daily, get accurate," 
+              , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"traffic updates, and alternative routes—right at your fingertips!" , style: appStyle(12, kDark, FontWeight.normal),),
+              ReusableText( text:"your current location and get the best way to navigate" , style: appStyle(12, kDark, FontWeight.normal),),
+              const HeightSpacer(size: 20),ReusableText( text:"Brings you augmented reality experience for numerous" 
+              , style: appStyle(12, kDark, FontWeight.normal),),
               ReusableText( text:"locations around the globe. Get live interactions with" , style: appStyle(12, kDark, FontWeight.normal),),
               ReusableText( text:"your current location and get the best way to navigate" , style: appStyle(12, kDark, FontWeight.normal),),
               const HeightSpacer(size: 20),
@@ -77,14 +86,14 @@ class InfoArExperience extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(onPressed: (){},
-                          icon: Icon(Icons.timer , color: Colors.black,),style: IconButton.styleFrom(backgroundColor: Colors.white),
+                          icon: Icon(Icons.monetization_on , color: Colors.black,),style: IconButton.styleFrom(backgroundColor: Colors.white),
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const HeightSpacer(size: 7),
-                            ReusableText(text: "Duration", style: appStyle(14, kDark,FontWeight.bold)),
-                            ReusableText(text: "From 1min", style: appStyle(14, kDarkGrey,FontWeight.normal))
+                            ReusableText(text: "Charges", style: appStyle(14, kDark,FontWeight.bold)),
+                            ReusableText(text: "Free", style: appStyle(14, kDarkGrey,FontWeight.normal))
                           ],
                         )
                       ],
@@ -102,14 +111,14 @@ class InfoArExperience extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(onPressed: (){},
-                          icon: Icon(Icons.people, color: Colors.black,),style: IconButton.styleFrom(backgroundColor: Colors.white),
+                          icon: Icon(Icons.phone_android, color: Colors.black,),style: IconButton.styleFrom(backgroundColor: Colors.white),
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const HeightSpacer(size: 7),
-                            ReusableText(text: "Size", style: appStyle(14, kDark,FontWeight.bold)),
-                            ReusableText(text: "1 Gadget", style: appStyle(14, kDarkGrey,FontWeight.normal))
+                            ReusableText(text: "Gadgets", style: appStyle(14, kDark,FontWeight.bold)),
+                            ReusableText(text: "Unlimited", style: appStyle(14, kDarkGrey,FontWeight.normal))
                           ],
                         )
                       ],
@@ -118,46 +127,11 @@ class InfoArExperience extends StatelessWidget {
                 ],
               ),
               const HeightSpacer(size: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ReusableText(text: "From ", style: appStyle(14, Colors.grey.shade600, FontWeight.normal)),
-                  ReusableText(text: "\$5.00", style: appStyle(30, kDark, FontWeight.bold)),
-                  ReusableText(text: " Per Tour", style: appStyle(14, Colors.grey.shade600, FontWeight.normal)),
-                ],
-              ),
               CustomOutlineBtnRound(
                 text: "Try It Out",
                 color: Color(kLight.value),
                 color2: Color(kLightBlue.value),
                 height: 50,
-              )
-            ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shadowColor: Colors.black,
-        color: Colors.white,
-        child: Container(
-          width: width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomOutlineBtnRound(
-                text: "Preview",
-                color: Colors.white,
-                color2: kLightBlue,
-                width: width*0.43,
-              ),
-              CustomOutlineBtnRound(
-                text: "Enquire More",
-                color: kLightBlue,
-                color2: Colors.white,
-                width: width*0.43,
               )
             ],
           ),

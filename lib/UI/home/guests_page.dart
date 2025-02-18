@@ -13,6 +13,8 @@ import 'dart:ui';
 
 import 'package:touristaar/UI/auth/registration_page.dart';
 import 'package:touristaar/UI/guestsPage/info_ar_experience.dart';
+import 'package:touristaar/UI/guestsPage/maps_routes.dart';
+import 'package:touristaar/UI/guestsPage/whats_ar.dart';
 
 
 class GuestsPage extends StatefulWidget {
@@ -114,6 +116,123 @@ class _GuestsPageState extends State<GuestsPage> {
                 const HeightSpacer(size: 20),
 
                 Text("What we do:" , style: appStyle(20, Colors.black, FontWeight.bold),),
+                const HeightSpacer(size: 10),
+                Container(
+                  height: height*0.3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: const DecorationImage(
+                      image: AssetImage('lib/assets/arPhone.PNG'),
+                      fit: BoxFit.cover
+                      )
+                    ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Align(
+                              alignment: Alignment.topRight ,
+                              child:ClipRRect(
+                                borderRadius: BorderRadius.circular(50), // Match the container's radius
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adjust blur intensity
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.1), // Slight opacity for frosted effect
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(onPressed: (){Get.to(()=> const WhatsAr());}, icon: const Icon(Icons.question_mark) , color: Colors.white,),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ),
+                          ),
+                          const HeightSpacer(size: 20),
+                          Text("Augmented Reality In Tourism And Travel", textAlign: TextAlign.center,style: appStyle(24, Colors.white, FontWeight.bold),),
+                          const HeightSpacer(size: 35),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                  child: Align(
+                                    alignment: Alignment.bottomLeft ,
+                                    child:ClipRRect(
+                                      borderRadius: BorderRadius.circular(50), // Match the container's radius
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adjust blur intensity
+                                        child: Container(
+                                          height: 40,
+                                          width: 40,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white.withOpacity(0.1), // Slight opacity for frosted effect
+                                            borderRadius: BorderRadius.circular(50),
+                                          ),
+                                          child:const Center(
+                                            child: Icon(Icons.travel_explore , color: Colors.white,),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ),
+                              ),
+                              //SizedBox(width: 10,),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10), // Match the container's radius
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adjust blur intensity
+                                  child: Container(
+                                    height: 30,
+                                    width: width*0.5,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.1), // Slight opacity for frosted effect
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child:Center(child: Text("AR" ,style: appStyle(12, Colors.white, FontWeight.w500),)),
+                                  ),
+                                ),
+                              ),
+                              //const SizedBox(width: 40,),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(50), // Match the container's radius
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adjust blur intensity
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.1), // Slight opacity for frosted effect
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(onPressed: (){
+                                        setState(() {
+                                          if(liked2=false){
+                                          liked2 = true;
+                                        }else if(liked2=true)
+                                        {
+                                          liked2 = false;
+                                        }
+                                        });
+                                      },
+                                       icon:liked2? const FaIcon(FontAwesomeIcons.heart, color: Colors.red ,) : const FaIcon(FontAwesomeIcons.heart, color: Colors.white ,)
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                  ),
+                ),
                 const HeightSpacer(size: 10),
                 Container(
                   height: height*0.3,
@@ -426,7 +545,7 @@ class _GuestsPageState extends State<GuestsPage> {
                                               border: Border.all(width: 1 , color: Colors.white)
                                             ),
                                             child: IconButton(onPressed: (){
-                                              
+                                              Get.to(()=> const MapsRoutes());
                                             },
                                              icon:const FaIcon(FontAwesomeIcons.map, color: Colors.white ,), 
                                             ),
@@ -474,7 +593,7 @@ class _GuestsPageState extends State<GuestsPage> {
                                             ),
                                           ),
                                           const HeightSpacer(size: 10),
-                                          Text("Bookings & Culture Links" , textAlign: TextAlign.center, style: appStyle(16, Colors.white, FontWeight.w500),)
+                                          Text("Culture Links" , textAlign: TextAlign.center, style: appStyle(16, Colors.white, FontWeight.w500),)
                                         ],
                                       ),
                                     ),
@@ -510,7 +629,7 @@ class _GuestsPageState extends State<GuestsPage> {
                                             ),
                                           ),
                                           const HeightSpacer(size: 10),
-                                          Text("Local Business Support" , textAlign: TextAlign.center, style: appStyle(16, Colors.white, FontWeight.w500),)
+                                          Text("Booking & Business Support" , textAlign: TextAlign.center, style: appStyle(16, Colors.white, FontWeight.w500),)
                                         ],
                                       ),
                                     ),
