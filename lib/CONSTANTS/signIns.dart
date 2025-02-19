@@ -16,8 +16,13 @@ class Signins extends StatelessWidget{
           child: Container(
             height: 80,
             decoration: BoxDecoration(
-              color: Color(kLightBlue.value),
-              borderRadius: BorderRadius.circular(10.0)
+              borderRadius: BorderRadius.circular(10.0),
+              color: Color(kLightBlue.value)
+              // gradient: LinearGradient(
+              //   colors: [Color(kLightBlue.value ), Colors.orange],
+              //   begin: Alignment.topLeft,
+              //   end: Alignment.bottomRight
+              // )
             ),
             child: IconButton(
               onPressed: (){},
@@ -29,8 +34,13 @@ class Signins extends StatelessWidget{
           child: Container(
             height: 80,
             decoration: BoxDecoration(
-              color: Color(kLightBlue.value),
-              borderRadius: BorderRadius.circular(10.0)
+              borderRadius: BorderRadius.circular(10.0),
+              color: Color(kLightBlue.value)
+              // gradient: LinearGradient(
+              //   colors: [Color(kLightBlue.value ), Colors.orange],
+              //   begin: Alignment.topLeft,
+              //   end: Alignment.bottomRight
+              // )
             ),
             child: IconButton(onPressed: (){}, icon: const FaIcon(FontAwesomeIcons.google  , size: 40,color: Colors.white,)),
           ),

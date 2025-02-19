@@ -20,9 +20,11 @@ class RegistrationPage extends StatefulWidget {
 
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
+  
 }
 
 class _RegistrationPageState extends State<RegistrationPage>{
+
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
   final TextEditingController name = TextEditingController();
@@ -75,9 +77,7 @@ class _RegistrationPageState extends State<RegistrationPage>{
                style: appStyle(30, Color(kDark.value),FontWeight.w600)),
               ReusableText(text: "Fill in the details to get registered",
                style: appStyle(16, Color(kDarkGrey.value), FontWeight.w500)),
-      
               const HeightSpacer(size: 30),
-
               CustomTextfield(
                 controller: name,
                 hintText: "FullName",
@@ -89,11 +89,8 @@ class _RegistrationPageState extends State<RegistrationPage>{
                     return null;
                   }
                 },
-                
               ),
-
               const HeightSpacer(size: 20),
-      
               CustomTextfield(
                 controller: email,
                 hintText: "Email",
@@ -104,12 +101,10 @@ class _RegistrationPageState extends State<RegistrationPage>{
                   }else{
                     return null;
                   }
-                },
-                
+                },  
               ),
-      
               const HeightSpacer(size: 20),
-      
+
               CustomTextfield(
                 controller: password,
                 hintText: "Password",
@@ -132,7 +127,9 @@ class _RegistrationPageState extends State<RegistrationPage>{
                     color: Color(kDark.value),),
                 ),
               ),
+
               const HeightSpacer(size: 10),
+
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(

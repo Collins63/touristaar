@@ -14,6 +14,7 @@ import 'package:touristaar/CONSTANTS/height_spacer.dart';
 import 'package:touristaar/CONSTANTS/reusable_text.dart';
 import 'package:touristaar/UI/home/favourite1.dart';
 import 'package:touristaar/UI/home/subscriptions.dart';
+import 'package:touristaar/UI/maps/map_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -163,9 +164,11 @@ class _HomePageState extends State<HomePage> {
                                           border: Border.all(width: 1 , color: Color(kLight.value)),
                                           color: Color(kLight.value)
                                         ),
-                                        child: IconButton(onPressed: (){},
-                                                icon:FaIcon(FontAwesomeIcons.map, color:Color(kLightBlue.value),), 
-                                              ),
+                                        child: IconButton(onPressed: (){
+                                          Get.to(()=> const MapPage());
+                                        },
+                                        icon:FaIcon(FontAwesomeIcons.map, color:Color(kLightBlue.value),), 
+                                        ),
                                       ),
                                       Container(
                                         height: height*0.09,

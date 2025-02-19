@@ -17,11 +17,12 @@ class CustomButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
-          gradient: LinearGradient(
-            colors: [Color(kLightBlue.value ), Color(kOrange.value)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight
-            )
+          color: Color(kLightBlue.value)
+          // gradient: LinearGradient(
+          //   colors: [Color(kLightBlue.value ), Color(kOrange.value)],
+          //   begin: Alignment.topLeft,
+          //   end: Alignment.bottomRight
+          //   )
         ),
         
         width: width,
