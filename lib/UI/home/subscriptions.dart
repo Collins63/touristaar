@@ -9,6 +9,7 @@ import 'package:touristaar/CONSTANTS/app_constants.dart';
 import 'package:touristaar/CONSTANTS/app_style.dart';
 import 'package:touristaar/CONSTANTS/height_spacer.dart';
 import 'package:touristaar/CONSTANTS/reusable_text.dart';
+import 'package:touristaar/UI/forms/pay.dart';
 import 'package:touristaar/UI/forms/subscriptions_paying.dart';
 
 class Subscriptions extends StatefulWidget {
@@ -25,15 +26,18 @@ class _SubscriptionsState extends State<Subscriptions> {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(50),
-           child: CustomAppBar(
-            text: "Subscriptions",
-            child: GestureDetector(
-              onTap: (){
-                Get.back();
-              },
-              child: const Icon(CupertinoIcons.arrow_left),
-        ))
-      ),
+           child:AppBar(
+            centerTitle: true,
+          title: Text("Subscribe" , style: appStyle(14, Colors.white, FontWeight.normal),),
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Color(kLightBlue.value),
+          shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(25),
+                  bottomRight: Radius.circular(25)
+                )
+              ),
+      )),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -130,7 +134,7 @@ class _SubscriptionsState extends State<Subscriptions> {
                 ),
                 const HeightSpacer(size: 20),
                 Text("Available Plans" , style: appStyle(16, Colors.black, FontWeight.normal),),
-                HeightSpacer(size: 15),
+                const HeightSpacer(size: 15),
                 Container(
                   height: 70,
                   decoration: BoxDecoration(
@@ -151,8 +155,8 @@ class _SubscriptionsState extends State<Subscriptions> {
                                 borderRadius: BorderRadius.circular(50.0),
                                 color: Color(kLight.value)
                               ),
-                              child: Center(
-                                child: FaIcon(FontAwesomeIcons.creditCard , color: Colors.green,),
+                              child: const Center(
+                                child: FaIcon(FontAwesomeIcons.creditCard , color: kLightBlue,),
                               ),
                             ),
                           ),
@@ -171,7 +175,7 @@ class _SubscriptionsState extends State<Subscriptions> {
                           )
                         ],
                       ),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
+                      IconButton(onPressed: (){Get.to(()=> const Pay());}, icon:const Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
                     ],
                   ),
                 ),
@@ -196,8 +200,8 @@ class _SubscriptionsState extends State<Subscriptions> {
                                 borderRadius: BorderRadius.circular(50.0),
                                 color: Color(kLight.value)
                               ),
-                              child: Center(
-                                child: FaIcon(FontAwesomeIcons.creditCard , color: Colors.green,),
+                              child:const Center(
+                                child: FaIcon(FontAwesomeIcons.creditCard , color: kLightBlue,),
                               ),
                             ),
                           ),
@@ -216,7 +220,7 @@ class _SubscriptionsState extends State<Subscriptions> {
                           )
                         ],
                       ),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
+                      IconButton(onPressed: (){}, icon: const Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
                     ],
                   ),
                 ),
@@ -243,8 +247,8 @@ class _SubscriptionsState extends State<Subscriptions> {
                                 borderRadius: BorderRadius.circular(50.0),
                                 color: Color(kLight.value)
                               ),
-                              child: Center(
-                                child: FaIcon(FontAwesomeIcons.creditCard , color: Colors.green,),
+                              child:const Center(
+                                child: FaIcon(FontAwesomeIcons.creditCard , color: kLightBlue),
                               ),
                             ),
                           ),
@@ -263,7 +267,7 @@ class _SubscriptionsState extends State<Subscriptions> {
                           )
                         ],
                       ),
-                      IconButton(onPressed: (){Get.to(()=> const SubscriptionsPaying());}, icon: Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
+                      IconButton(onPressed: (){Get.to(()=> const SubscriptionsPaying());}, icon:const Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
                     ],
                   ),
                 ),
@@ -288,8 +292,8 @@ class _SubscriptionsState extends State<Subscriptions> {
                                 borderRadius: BorderRadius.circular(50.0),
                                 color: Color(kLight.value)
                               ),
-                              child: Center(
-                                child: FaIcon(FontAwesomeIcons.creditCard , color: Colors.green,),
+                              child: const Center(
+                                child: FaIcon(FontAwesomeIcons.creditCard , color: kLightBlue),
                               ),
                             ),
                           ),
@@ -308,7 +312,7 @@ class _SubscriptionsState extends State<Subscriptions> {
                           )
                         ],
                       ),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
+                      IconButton(onPressed: (){}, icon:const Icon(Icons.chevron_right_rounded, color: Colors.white,size: 50,))
                     ],
                   ),
                 )

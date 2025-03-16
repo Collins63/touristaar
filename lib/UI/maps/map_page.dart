@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:touristaar/CONSTANTS/app_bar.dart';
 import 'package:touristaar/CONSTANTS/app_constants.dart';
@@ -15,11 +16,28 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
+  final Location _locationService = Location();
+  late GoogleMapController _mapController;
+  LatLng? _currentLocation;
   static const LatLng _pGooglePLex = LatLng(37.4223, -122.0848);
    @override
   void initState() {
     super.initState();
     _checkLocationPermission();
+  }
+  Future<void> _getCurrentLocation() async {
+    try {
+      final locationData = await _locationService.getLocation();
+      setState(() {
+        _currentLocation = LatLng(locationData.latitude!, locationData.longitude!);
+        print(_currentLocation);
+      });
+    } catch (e) {
+      print("Error getting location: $e");
+    }
+  }
+   void _onMapCreated(GoogleMapController controller) {
+    _mapController = controller;
   }
 
   Future<void> _checkLocationPermission() async {
@@ -49,9 +67,17 @@ class _MapPageState extends State<MapPage> {
               ),
         )
       ),
-      body: GoogleMap(
-        initialCameraPosition: CameraPosition(target: _pGooglePLex , zoom: 13)
-      ),
+      body: _currentLocation == null
+          ? const Center(child: CircularProgressIndicator())
+          : GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: CameraPosition(
+                target: _currentLocation!,
+                zoom: 15,
+              ),
+              myLocationEnabled: true,
+              myLocationButtonEnabled: true,
+            ),
     );
   }
 }

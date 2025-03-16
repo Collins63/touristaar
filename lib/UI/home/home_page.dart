@@ -12,6 +12,7 @@ import 'package:touristaar/CONSTANTS/app_style.dart';
 import 'package:touristaar/CONSTANTS/custom_textfield.dart';
 import 'package:touristaar/CONSTANTS/height_spacer.dart';
 import 'package:touristaar/CONSTANTS/reusable_text.dart';
+import 'package:touristaar/UI/forms/translator.dart';
 import 'package:touristaar/UI/home/favourite1.dart';
 import 'package:touristaar/UI/home/subscriptions.dart';
 import 'package:touristaar/UI/maps/map_page.dart';
@@ -178,7 +179,9 @@ class _HomePageState extends State<HomePage> {
                                           border: Border.all(width: 1 ,color: Color(kLight.value)),
                                           color: Color(kLight.value)
                                         ),
-                                        child: IconButton(onPressed: (){},
+                                        child: IconButton(onPressed: (){
+                                          Get.to(()=> Translator());
+                                        },
                                                 icon:FaIcon(FontAwesomeIcons.language, color:Color(kLightBlue.value)), 
                                               ),
                                       ),

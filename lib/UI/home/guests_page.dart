@@ -39,7 +39,6 @@ class _GuestsPageState extends State<GuestsPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
                 const HeightSpacer(size: 20),
                 Text("Discover!", style: appStyle(46, Colors.black, FontWeight.bold),),
                 const HeightSpacer(size: 5),
@@ -112,9 +111,7 @@ class _GuestsPageState extends State<GuestsPage> {
                     ],
                   ),
                 ),
-
                 const HeightSpacer(size: 20),
-
                 Text("What we do:" , style: appStyle(20, Colors.black, FontWeight.bold),),
                 const HeightSpacer(size: 10),
                 Container(

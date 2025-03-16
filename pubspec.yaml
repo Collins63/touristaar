@@ -50,6 +50,8 @@ dependencies:
   google_maps_flutter: ^2.10.0
   location: ^7.0.1
   permission_handler: ^11.3.1
+  translator: ^1.0.3+1
+  arkit_plugin: ^1.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -96,6 +98,8 @@ flutter:
     - lib\assets\Ar.png
     - lib\assets\arPhone.PNG
     - lib\assets\maps.jpg
+    - lib\assets\translator.png
+    - lib\assets\creditcard.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
